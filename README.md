@@ -28,29 +28,39 @@ Phase 2:
 ## Project Structure
 
 ```
-project/ - Project root directory
-    app.py - Project entry file
-    rss_reader.py - Get podcast content from the specified RSS and download podcast content
-    speech_recognition.py - Implement speech recognition content and convert it to text
-    text_to_speech.py - Implement converting text to speech
-    audio_converter.py - Implement audio format conversion
-    api_call.py - Call the chatgpt interface to do summary analysis
-    requirements.txt - Project dependencies
-    README.md - Project documentation
-    templates/ - Web front-end template directory
-        index.html - Web front-end entry file
-    static/ - Web front-end static file directory
-        css/ - Web front-end style file directory
-        style.css - Web front-end style file
-    js/ - Web front-end script file directory
-        script.js - Web front-end script file
-    data/ - Data directory
-    podcast/ - Podcast directory
-    audio/ - Audio directory
-    text/ - Text directory
-
+├── cmd
+│   └── main.go
+├── internal
+│   ├── api
+│   │   ├── handlers.go
+│   │   └── routes.go
+│   ├── config
+│   │   └── config.go
+│   ├── models
+│   │   └── podcast.go
+│   ├── repositories
+│   │   └── podcast_repository.go
+│   ├── services
+│   │   ├── chatgpt_service.go
+│   │   └── podcast_service.go
+│   └── utils
+│       ├── rss_parser.go
+│       └── text_converter.go
+├── migrations
+│   ├── 202201010000_init.sql
+│   └── migrate.go
+├── static
+│   ├── css
+│   └── js
+├── templates
+│   ├── index.html
+│   └── podcast.html
+├── vendor
+├── .env
+├── .gitignore
+├── README.md
+└── go.mod
 ```
-
 
 ## Usage
 

@@ -28,26 +28,57 @@ PodcastGPT的开发计划可以分为以下几个阶段：
 ## 结构
 
 ```
-project/ - 项目根目录
-    app.py - 项目入口文件
-    rss_reader.py - 从指定的rss获取播客内容并且下载播客内容
-    speech_recognition.py - 实现语音识别内容并转化为文字
-    text_to_speech.py - 实现将文字转化为语音
-    audio_converter.py - 实现音频格式转换
-    api_call.py - 调用chatgpt接口做总结分析
-    requirements.txt - 项目依赖
-    README.md - 项目说明文档
-    templates/ - 网页前端模板目录
-        index.html - 网页前端入口文件
-    static/ - 网页前端静态文件目录
-        css/ - 网页前端样式文件目录
-            style.css - 网页前端样式文件
-        js/ - 网页前端脚本文件目录
-            script.js - 网页前端脚本文件
-        data/ - 数据目录
-        podcast/ - 播客目录
-        audio/ - 音频目录
-        text/ - 文本目录
+├── cmd
+│   └── main.go
+├── internal
+│   ├── api
+│   │   ├── handlers.go
+│   │   └── routes.go
+│   ├── config
+│   │   └── config.go
+│   ├── models
+│   │   └── podcast.go
+│   ├── repositories
+│   │   └── podcast_repository.go
+│   ├── services
+│   │   ├── chatgpt_service.go
+│   │   └── podcast_service.go
+│   └── utils
+│       ├── rss_parser.go
+│       └── text_converter.go
+├── migrations
+│   ├── 202201010000_init.sql
+│   └── migrate.go
+├── static
+│   ├── css
+│   └── js
+├── templates
+│   ├── index.html
+│   └── podcast.html
+├── vendor
+├── .env
+├── .gitignore
+├── README.md
+└── go.mod
+```
+
+```
+cmd: 包含一个或多个main函数，用于生成可执行文件。
+internal: 包含项目的内部代码。
+api: 包含处理HTTP请求的控制器和路由。
+config: 包含应用程序的配置参数。
+models: 包含与项目中使用的模型相关的结构体。
+repositories: 包含与数据库访问相关的代码。
+services: 包含业务逻辑层的代码。
+utils: 包含项目中的工具类代码。
+migrations: 数据库的迁移文件和迁移脚本等。
+static: 包含应用程序的静态文件，如CSS、JavaScript、图像等。
+templates: 包含应用程序的HTML模板文件。
+vendor: 第三方依赖包。
+.env: 应用程序的环境变量，如数据库连接字符串等。
+.gitignore: git仓库忽略文件列表。
+README.md: 项目说明文件。
+go.mod: Golang项目的模块文件。
 ```
 
 ## 使用
